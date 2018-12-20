@@ -4,6 +4,10 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+Assets/StreamingAssets/
+Assets/MilkyWay/Texture/
+Assets/PostProcessing/Textures/Lens Dirt/
+Assets/MilkyWay/Texture
 
 # Visual Studio cache directory
 .vs/

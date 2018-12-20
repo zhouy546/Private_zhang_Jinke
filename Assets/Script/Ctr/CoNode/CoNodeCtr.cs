@@ -30,6 +30,8 @@ public class CoNodeCtr : ICtr {
     {
         DealWithUDPMessage.ToIntro += hide;
         DealWithUDPMessage.ToDefaultScene += hide;
+        DealWithUDPMessage.ToDefaultScene2 += hide;
+
         DealWithUDPMessage.ToLogoWell += hide;
         DealWithUDPMessage.ToScreenProtect += hide;
         DealWithUDPMessage.ToStrategy += hide;
@@ -42,6 +44,8 @@ public class CoNodeCtr : ICtr {
 
         DefaultNodesCtr.HideMainPic += hide;
         DefaultNodesCtr.ShowMainPic += hide;
+        DefaultNodesCtr2.HideMainPic += hide;
+        DefaultNodesCtr2.ShowMainPic += hide;
     }
 
     private void OnDisable()
@@ -60,6 +64,9 @@ public class CoNodeCtr : ICtr {
 
         DefaultNodesCtr.HideMainPic -= hide;
         DefaultNodesCtr.ShowMainPic -= hide;
+
+        DefaultNodesCtr2.HideMainPic -= hide;
+        DefaultNodesCtr2.ShowMainPic -= hide;
     }
 
     private void SetUpImage()

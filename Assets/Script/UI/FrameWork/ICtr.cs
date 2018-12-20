@@ -80,13 +80,27 @@ public class ICtr : MonoBehaviour {
     }
 
     public virtual Transform GetCameraPos() {
-       
+
         return this.transform;
     }
 
     public virtual Image GetImage() {
         return this.GetComponent<Image>();
     }
+
+    public virtual void showMainPicDe()
+    {
+
+    }
+    public virtual void hideMainPicDe()
+    {
+
+    }
+    public virtual void ShowDescriptionDe(int id)
+    {
+
+    }
+}
     //public void InteractionToggle(bool b)
     //{
     //    foreach (var item in AllNimages)
@@ -109,4 +123,3 @@ public class ICtr : MonoBehaviour {
     //    }
     //}
 
-}

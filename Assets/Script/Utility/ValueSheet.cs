@@ -14,13 +14,18 @@ public class ValueSheet : MonoBehaviour {
     public static float NodeDistance = 30f;
 
     public static Dictionary<int, GameObject> ID_Node_keyValuePairs = new Dictionary<int, GameObject>();
+
+    public static Dictionary<int, GameObject> ID_Node2_keyValuePairs = new Dictionary<int, GameObject>();
+
     public static Dictionary<int, GameObject> ID_ECO_Node_keyValuePairs = new Dictionary<int, GameObject>();
     public static Dictionary<int, GameObject> ID_Gongyi_Node_keyValuePairs = new Dictionary<int, GameObject>();
 
     public static Dictionary<int, List<Sprite>> DescriptionkeyValuePairs = new Dictionary<int, List<Sprite>>();
+    public static Dictionary<int, List<Sprite>> Description2keyValuePairs = new Dictionary<int, List<Sprite>>();
     public static Dictionary<string, AudioClip> NameAudio_keyValuePairs = new Dictionary<string, AudioClip>();
 
     public static List<Sprite> MainUIsprites = new List<Sprite>();
+    public static List<Sprite> MainUI2sprites = new List<Sprite>();
 
     public static List<Sprite> IntroUIsprites = new List<Sprite>();
 
@@ -36,15 +41,18 @@ public class ValueSheet : MonoBehaviour {
 
     public static List<Node> NodeList = new List<Node>();
 
-    public static List<Node> Intro_NodeList = new List<Node>();//弃用
+    public static List<Node> NodeList2 = new List<Node>();
 
-    public static List<Node> strategy_NodeList = new List<Node>();//弃用
+
+
 
 
 
 
 
     public static List<NodeCtr> nodeCtrs = new List<NodeCtr>();
+    public static List<NodeCtr> nodeCtrs2 = new List<NodeCtr>();
+
 
     public static List<IntroNodeCtr> introNodeCtr = new List<IntroNodeCtr>();
 

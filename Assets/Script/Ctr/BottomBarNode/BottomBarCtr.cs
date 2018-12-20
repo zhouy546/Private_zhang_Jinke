@@ -24,6 +24,8 @@ public class BottomBarCtr : ICtr {
     private void OnEnable()
     {
         DealWithUDPMessage.ToDefaultScene += Show;
+        DealWithUDPMessage.ToDefaultScene2 += Show;
+
         DealWithUDPMessage.ToLogoWell+= Hide;
         DealWithUDPMessage.ToIntro+=Show;
         DealWithUDPMessage.ToStrategy += Show;

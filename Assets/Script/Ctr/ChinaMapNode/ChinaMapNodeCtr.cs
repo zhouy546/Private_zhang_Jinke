@@ -12,6 +12,7 @@ public class ChinaMapNodeCtr : ICtr {
     private void OnEnable()
     {
         DealWithUDPMessage.ToIntro += hide;
+        DealWithUDPMessage.ToDefaultScene2 += hide;
         DealWithUDPMessage.ToDefaultScene += hide;
         DealWithUDPMessage.ToLogoWell += hide;
         DealWithUDPMessage.ToScreenProtect += hide;
@@ -26,6 +27,9 @@ public class ChinaMapNodeCtr : ICtr {
 
         DefaultNodesCtr.HideMainPic += hide;
         DefaultNodesCtr.ShowMainPic += hide;
+
+        DefaultNodesCtr2.HideMainPic += hide;
+        DefaultNodesCtr2.ShowMainPic += hide;
     }
 
     private void OnDisable()
@@ -43,7 +47,10 @@ public class ChinaMapNodeCtr : ICtr {
         DealWithUDPMessage.ToMainVideo -= hide;
 
         DefaultNodesCtr.HideMainPic -= hide;
-       DefaultNodesCtr.ShowMainPic -= hide;
+        DefaultNodesCtr.ShowMainPic -= hide;
+
+         DefaultNodesCtr2.HideMainPic -= hide;
+        DefaultNodesCtr2.ShowMainPic -= hide;
     }
 
 

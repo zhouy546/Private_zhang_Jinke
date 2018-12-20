@@ -19,6 +19,8 @@ using System.Text.RegularExpressions;
 using System.Linq;
 
 public class DealWithUDPMessage : MonoBehaviour {
+
+    public static Action ToDefaultScene2;
     public static Action ToDefaultScene;
     public static Action ToLogoWell;
     public static Action ToIntro;
@@ -40,7 +42,7 @@ public class DealWithUDPMessage : MonoBehaviour {
 
     public string tempstr = "10000";
 
-    private static bool isInDefaultScreen,isInLogoWell,isInIntro,isInStrategy,isInYeWuMoXing,isInCo,isInMatching,isInChinaMap;
+    private static bool isInDefaultScreen, isInDefaultScreen2, isInLogoWell,isInIntro,isInStrategy,isInYeWuMoXing,isInCo,isInMatching,isInChinaMap;
     //private static bool isInScreenProtect=true;
 
 
@@ -70,52 +72,104 @@ public class DealWithUDPMessage : MonoBehaviour {
                 toDefaultScene();
                 if (dataTest == "10001")
                 {
-                    OverriderCameraMove.instance.Go(0, ValueSheet.ID_Node_keyValuePairs);
+                    OverriderCameraMove.instance.Go(0, ValueSheet.ID_Node_keyValuePairs,DefaultNodesCtr.instance);
                 }
                 else if (dataTest == "10002")
                 {
-                    OverriderCameraMove.instance.Go(1, ValueSheet.ID_Node_keyValuePairs);
+                    OverriderCameraMove.instance.Go(1, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
 
                 }
                 else if (dataTest == "10003")
                 {
-                    OverriderCameraMove.instance.Go(2, ValueSheet.ID_Node_keyValuePairs);
+                    OverriderCameraMove.instance.Go(2, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
 
                 }
                 else if (dataTest == "10004")
                 {
-                    OverriderCameraMove.instance.Go(3, ValueSheet.ID_Node_keyValuePairs);
+                    OverriderCameraMove.instance.Go(3, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
 
                 }
                 else if (dataTest == "10005")
                 {
-                    OverriderCameraMove.instance.Go(4, ValueSheet.ID_Node_keyValuePairs);
+                    OverriderCameraMove.instance.Go(4, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
 
                 }
                 else if (dataTest == "10006")
                 {
-                    OverriderCameraMove.instance.Go(5, ValueSheet.ID_Node_keyValuePairs);
+                    OverriderCameraMove.instance.Go(5, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
 
                 }
                 else if (dataTest == "10007")
                 {
-                    OverriderCameraMove.instance.Go(6, ValueSheet.ID_Node_keyValuePairs);
+                    OverriderCameraMove.instance.Go(6, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
 
                 }
                 else if (dataTest == "10008")
                 {
-                    OverriderCameraMove.instance.Go(7, ValueSheet.ID_Node_keyValuePairs);
+                    OverriderCameraMove.instance.Go(7, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
 
                 }
                 else if (dataTest == "10009")
                 {
-                    OverriderCameraMove.instance.Go(8, ValueSheet.ID_Node_keyValuePairs);
+                    OverriderCameraMove.instance.Go(8, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
 
                 }
                 else if (dataTest == "10010")
                 {
-                    OverriderCameraMove.instance.Go(9, ValueSheet.ID_Node_keyValuePairs);
+                    OverriderCameraMove.instance.Go(9, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
 
+                }
+            }
+            else if (int.Parse(dataTest) >= 10031 && int.Parse(dataTest) <= 10040) {
+                toDefaultScene2();
+
+                if (dataTest == "10031")
+                {
+                    OverriderCameraMove.instance.Go(0, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance,800f);
+                }
+                else if (dataTest == "10032")
+                {
+                    OverriderCameraMove.instance.Go(1, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
+
+                }
+                else if (dataTest == "10033")
+                {
+                    OverriderCameraMove.instance.Go(2, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
+
+                }
+                else if (dataTest == "10034")
+                {
+                    OverriderCameraMove.instance.Go(3, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
+
+                }
+                else if (dataTest == "10035")
+                {
+                    OverriderCameraMove.instance.Go(4, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
+
+                }
+                else if (dataTest == "10036")
+                {
+                    OverriderCameraMove.instance.Go(5, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
+
+                }
+                else if (dataTest == "10037")
+                {
+                    OverriderCameraMove.instance.Go(6, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
+
+                }
+                else if (dataTest == "10038")
+                {
+                    OverriderCameraMove.instance.Go(7, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
+
+                }
+                else if (dataTest == "10039")
+                {
+                    OverriderCameraMove.instance.Go(8, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
+
+                }
+                else if (dataTest == "10040")
+                {
+                    OverriderCameraMove.instance.Go(9, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
                 }
             }
 
@@ -173,11 +227,13 @@ public class DealWithUDPMessage : MonoBehaviour {
                 toChinaMap();
             }
 
-            else if (dataTest == "10022") {
+            else if (dataTest == "10022")
+            {
                 toMainVideo();
                 playMainVideo(ValueSheet.MainVideoUrl);
             }
-            else if (dataTest == "10023") {
+            else if (dataTest == "10023")
+            {
                 toMainVideo();
                 playMainVideo(ValueSheet.Mainvideo2);
             }
@@ -227,8 +283,19 @@ public class DealWithUDPMessage : MonoBehaviour {
         if (!isInDefaultScreen) {
             Debug.Log("去项目集锦");
             ToDefaultScene?.Invoke();
-           // isInDefaultScreen = true;
-            isInLogoWell = isInIntro = isInStrategy /*= isInScreenProtect*/ = isInYeWuMoXing= isInCo = isInMatching = isInChinaMap = false;
+            // isInDefaultScreen = true;
+            isInDefaultScreen2 = isInLogoWell = isInIntro = isInStrategy /*= isInScreenProtect*/ = isInYeWuMoXing= isInCo = isInMatching = isInChinaMap = false;
+        }
+    }
+
+    public static void toDefaultScene2()
+    {
+        if (!isInDefaultScreen2)
+        {
+            Debug.Log("去项目集锦");
+            ToDefaultScene2?.Invoke();
+            // isInDefaultScreen = true;
+            isInDefaultScreen= isInLogoWell = isInIntro = isInStrategy /*= isInScreenProtect*/ = isInYeWuMoXing = isInCo = isInMatching = isInChinaMap = false;
         }
     }
 
@@ -238,7 +305,7 @@ public class DealWithUDPMessage : MonoBehaviour {
         {
             ToLogoWell?.Invoke();
             isInLogoWell = true;
-            isInDefaultScreen = isInIntro = isInStrategy /*= isInScreenProtect*/= isInYeWuMoXing= isInCo = isInMatching = isInChinaMap = false;
+            isInDefaultScreen2 = isInDefaultScreen = isInIntro = isInStrategy /*= isInScreenProtect*/= isInYeWuMoXing= isInCo = isInMatching = isInChinaMap = false;
         }
     }
 
@@ -248,7 +315,7 @@ public class DealWithUDPMessage : MonoBehaviour {
         {
             ToIntro?.Invoke();
             isInIntro = true;
-            isInDefaultScreen = isInLogoWell = isInStrategy /*= isInScreenProtect*/ = isInYeWuMoXing= isInCo = isInMatching = isInChinaMap = false;
+            isInDefaultScreen2= isInDefaultScreen = isInLogoWell = isInStrategy /*= isInScreenProtect*/ = isInYeWuMoXing= isInCo = isInMatching = isInChinaMap = false;
         }
     }
     public static void toStrategy()
@@ -257,15 +324,15 @@ public class DealWithUDPMessage : MonoBehaviour {
         {
             ToStrategy?.Invoke();
             isInStrategy = true;
-            isInDefaultScreen = isInLogoWell = isInIntro /*= isInScreenProtect*/ = isInYeWuMoXing= isInCo = isInMatching = isInChinaMap = false;
+            isInDefaultScreen2= isInDefaultScreen = isInLogoWell = isInIntro /*= isInScreenProtect*/ = isInYeWuMoXing= isInCo = isInMatching = isInChinaMap = false;
         }
     }
     public static void toScreenProtect()
     {
         //if (!isInScreenProtect) {
             ToScreenProtect?.Invoke();
-            //isInScreenProtect = true;
-            isInDefaultScreen = isInLogoWell = isInIntro = isInStrategy = isInYeWuMoXing= isInCo = isInMatching = isInChinaMap = false;
+        //isInScreenProtect = true;
+        isInDefaultScreen2= isInDefaultScreen = isInLogoWell = isInIntro = isInStrategy = isInYeWuMoXing= isInCo = isInMatching = isInChinaMap = false;
         //}
     }
 
@@ -275,7 +342,7 @@ public class DealWithUDPMessage : MonoBehaviour {
         {
             ToYeWuMoXing?.Invoke();
             isInYeWuMoXing = true;
-            isInDefaultScreen = isInLogoWell = isInIntro = isInStrategy /*= isInScreenProtect */= isInCo= isInMatching = isInChinaMap = false;
+            isInDefaultScreen2= isInDefaultScreen = isInLogoWell = isInIntro = isInStrategy /*= isInScreenProtect */= isInCo= isInMatching = isInChinaMap = false;
         }
     }
 
@@ -285,7 +352,7 @@ public class DealWithUDPMessage : MonoBehaviour {
         {
             ToCo?.Invoke();
             isInCo = true;
-            isInDefaultScreen = isInLogoWell = isInIntro = isInStrategy /*= isInScreenProtect*/= isInYeWuMoXing = isInMatching = isInChinaMap = false;
+            isInDefaultScreen2= isInDefaultScreen = isInLogoWell = isInIntro = isInStrategy /*= isInScreenProtect*/= isInYeWuMoXing = isInMatching = isInChinaMap = false;
         }
     }
 
@@ -294,7 +361,7 @@ public class DealWithUDPMessage : MonoBehaviour {
         {
             ToMatching?.Invoke();
             isInMatching = true;
-            isInDefaultScreen = isInLogoWell = isInIntro = isInStrategy /*= isInScreenProtect */= isInYeWuMoXing = isInCo = isInChinaMap = false;
+            isInDefaultScreen2= isInDefaultScreen = isInLogoWell = isInIntro = isInStrategy /*= isInScreenProtect */= isInYeWuMoXing = isInCo = isInChinaMap = false;
         }
     }
 
@@ -302,7 +369,7 @@ public class DealWithUDPMessage : MonoBehaviour {
         if (!isInChinaMap) {
             ToChinaMap?.Invoke();
             isInChinaMap = true;
-            isInDefaultScreen = isInLogoWell = isInIntro = isInStrategy/* = isInScreenProtect*/ = isInYeWuMoXing = isInCo = isInMatching = false;
+            isInDefaultScreen2= isInDefaultScreen = isInLogoWell = isInIntro = isInStrategy/* = isInScreenProtect*/ = isInYeWuMoXing = isInCo = isInMatching = false;
         }
     }
 
@@ -311,7 +378,7 @@ public class DealWithUDPMessage : MonoBehaviour {
 
             ToMainVideo?.Invoke();
 
-        isInChinaMap = isInDefaultScreen = isInLogoWell = isInIntro = isInStrategy/* = isInScreenProtect */= isInYeWuMoXing = isInCo = isInMatching = false;
+        isInDefaultScreen2= isInChinaMap = isInDefaultScreen = isInLogoWell = isInIntro = isInStrategy/* = isInScreenProtect */= isInYeWuMoXing = isInCo = isInMatching = false;
 
     }
 

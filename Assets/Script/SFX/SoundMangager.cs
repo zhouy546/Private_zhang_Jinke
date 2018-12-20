@@ -20,6 +20,7 @@ public class SoundMangager : MonoBehaviour {
     {
         DealWithUDPMessage.ToIntro += Select;
         DealWithUDPMessage.ToDefaultScene += Select;
+        DealWithUDPMessage.ToDefaultScene2 += Select;
         DealWithUDPMessage.ToLogoWell += Select;
         DealWithUDPMessage.ToScreenProtect += Select;
         DealWithUDPMessage.ToStrategy += Select;

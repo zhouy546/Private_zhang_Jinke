@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefaultNodesCtr : ICtr {
-    public static DefaultNodesCtr instance;
+public class DefaultNodesCtr2 : ICtr {
+    public static DefaultNodesCtr2 instance;
     public static Action HideMainPic;
     public static Action ShowMainPic;
 
@@ -18,17 +18,19 @@ public class DefaultNodesCtr : ICtr {
     }
 
 
-    public override void  showMainPicDe(){
+    public override void showMainPicDe()
+    {
         ShowMainPic?.Invoke();
     }
 
-    public override void hideMainPicDe() {
+    public override void hideMainPicDe()
+    {
         HideMainPic?.Invoke();
     }
 
-    public override void ShowDescriptionDe(int id) {
-        ValueSheet.nodeCtrs[id].ShowDescription();
+    public override void ShowDescriptionDe(int id)
+    {
+        ValueSheet.nodeCtrs2[id].ShowDescription();
     }
-
 
 }

@@ -25,6 +25,8 @@ public class IntroNodeCtr : ICtr {
     {
         DealWithUDPMessage.ToIntro += introNodesGridCtr.show;
         DealWithUDPMessage.ToDefaultScene += introNodesGridCtr.hide;
+        DealWithUDPMessage.ToDefaultScene2 += introNodesGridCtr.hide;
+
         DealWithUDPMessage.ToLogoWell += introNodesGridCtr.hide;
         DealWithUDPMessage.ToScreenProtect +=introNodesGridCtr.hide;
         DealWithUDPMessage.ToStrategy += introNodesGridCtr.hide;
@@ -36,6 +38,9 @@ public class IntroNodeCtr : ICtr {
 
         DefaultNodesCtr.HideMainPic += introNodesGridCtr.hide;
         DefaultNodesCtr.ShowMainPic += introNodesGridCtr.hide;
+
+        DefaultNodesCtr2.HideMainPic += introNodesGridCtr.hide;
+        DefaultNodesCtr2.ShowMainPic += introNodesGridCtr.hide;
 
     }
 
@@ -56,6 +61,9 @@ public class IntroNodeCtr : ICtr {
 
         DefaultNodesCtr.HideMainPic -= introNodesGridCtr.hide;
         DefaultNodesCtr.ShowMainPic -= introNodesGridCtr.hide;
+
+        DefaultNodesCtr2.HideMainPic -= introNodesGridCtr.hide;
+        DefaultNodesCtr2.ShowMainPic -= introNodesGridCtr.hide;
     }
 
 

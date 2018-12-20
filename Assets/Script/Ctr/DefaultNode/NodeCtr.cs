@@ -13,11 +13,11 @@ public class NodeCtr : ICtr {
 
     public void Start()
     {
-        initialization();
+        //initialization();
     }
 
     // Use this for initialization
-    public override void initialization() {
+    public void initialization(List<Sprite> mainUIsprite, Dictionary<int, List<Sprite>> DescriptionkeyValuePairs) {
         base.initialization();
         ID = gameObject.name;
         foreach (var item in ctrs)
@@ -25,14 +25,29 @@ public class NodeCtr : ICtr {
             item.initialization();
         }
 
-        SetUpImage();
+        SetUpImage(mainUIsprite, DescriptionkeyValuePairs);
+
+        if (ValueSheet.nodeCtrs.Contains(this))
+        {
+            DefaultNodesCtr.HideMainPic += hideMainPic;
+            DefaultNodesCtr.ShowMainPic += showMainImage;
+            DealWithUDPMessage.ToDefaultScene += showMainImage;
+            DealWithUDPMessage.ToDefaultScene2 += HideAllImage;
+        }
+        else {
+             DefaultNodesCtr2.HideMainPic += hideMainPic;
+            DefaultNodesCtr2.ShowMainPic += showMainImage;
+            DealWithUDPMessage.ToDefaultScene2 += showMainImage;
+            DealWithUDPMessage.ToDefaultScene += HideAllImage;
+        }
+
 
     }
 
     private void OnEnable()
     {
 
-        DealWithUDPMessage.ToDefaultScene += showMainImage;
+   
         DealWithUDPMessage.ToLogoWell += HideAllImage;
         DealWithUDPMessage.ToScreenProtect += HideAllImage;
         DealWithUDPMessage.ToIntro += HideAllImage;
@@ -43,8 +58,9 @@ public class NodeCtr : ICtr {
         DealWithUDPMessage.ToChinaMap += HideAllImage;
         DealWithUDPMessage.ToMainVideo += HideAllImage;
 
-        DefaultNodesCtr.HideMainPic += hideMainPic;
-        DefaultNodesCtr.ShowMainPic += showMainImage;
+
+
+
     }
 
     private void OnDisable()
@@ -62,6 +78,8 @@ public class NodeCtr : ICtr {
 
         DefaultNodesCtr.HideMainPic -= hideMainPic;
         DefaultNodesCtr.ShowMainPic -= showMainImage;
+        DefaultNodesCtr2.HideMainPic -= hideMainPic;
+        DefaultNodesCtr2.ShowMainPic -= showMainImage;
     }
 
 
@@ -126,12 +144,12 @@ public class NodeCtr : ICtr {
         }
     }
 
-    private void SetUpImage()
+    private void SetUpImage(List<Sprite> mainUIsprite,Dictionary<int,List<Sprite>> DescriptionkeyValuePairs)
     {
 
-        MainImage.sprite = ValueSheet.MainUIsprites[int.Parse(ID)];
+        MainImage.sprite = mainUIsprite[int.Parse(ID)];
 
-        DescriptionImage.sprite = ValueSheet.DescriptionkeyValuePairs[int.Parse(ID)][0];
+        DescriptionImage.sprite = DescriptionkeyValuePairs[int.Parse(ID)][0];
     }
 
 }

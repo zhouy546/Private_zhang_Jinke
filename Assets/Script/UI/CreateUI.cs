@@ -24,6 +24,7 @@ public class CreateUI : MonoBehaviour {
     // Use this for initialization
     public void Initialization() {
         CreateDefaultNode();
+        CreateDefaultNode2();
         CreateIntroNode();
         CreateYeWuMoXingNode();
         CreateCoNode();
@@ -63,9 +64,36 @@ public class CreateUI : MonoBehaviour {
                 }
 
             }
+
             ValueSheet.ID_Node_keyValuePairs.Add(ValueSheet.NodeList[j].ID, ValueSheet.nodeCtrs[j].gameObject);
+            ValueSheet.nodeCtrs[j].initialization(ValueSheet.MainUIsprites, ValueSheet.DescriptionkeyValuePairs);
+        }
+        
+        
+    }
+
+
+    private void CreateDefaultNode2() {
+        for (int i = 0; i < ValueSheet.NodeList2.Count; i++)
+        {
+            if (i % 2 == 0)
+            {
+                Vector3 pos = new Vector3(-20, 16.3f, i * ValueSheet.NodeDistance);
+                CreateObject<NodeCtr>(NodeL_Default, i, pos, parent[6], ValueSheet.nodeCtrs2);
+
+            }
+            else {
+                Vector3 pos = new Vector3(20, 16.3f, i * ValueSheet.NodeDistance);
+                CreateObject<NodeCtr>(NodeR_Default, i, pos, parent[6], ValueSheet.nodeCtrs2);
+            }
+
+            ValueSheet.ID_Node2_keyValuePairs.Add(ValueSheet.NodeList2[i].ID, ValueSheet.nodeCtrs2[i].gameObject);
+            ValueSheet.nodeCtrs2[i].initialization(ValueSheet.MainUI2sprites, ValueSheet.Description2keyValuePairs);
+
         }
     }
+
+
 
     private void CreateIntroNode() {
         CreateObject<IntroNodeCtr>(SunNode_Intro, 0, Vector3.zero, parent[1], ValueSheet.introNodeCtr);

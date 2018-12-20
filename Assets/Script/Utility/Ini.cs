@@ -85,6 +85,17 @@ public class Ini : MonoBehaviour {
             ValueSheet.DescriptionkeyValuePairs.Add(i, sp);
         }
 
+        for (int i = 0; i < ValueSheet.NodeList2.Count; i++)
+        {
+            List<Sprite> sp = new List<Sprite>();
+            string path = "/UI/Description2/" + i.ToString() + "/";
+            // Debug.Log(path);
+            yield return GetSpriteListFromStreamAsset(path, "png", sp);
+
+            ValueSheet.Description2keyValuePairs.Add(i, sp);
+        }
+
+
         //  Debug.Log(ValueSheet.DescriptionkeyValuePairs.Count);
     }
 
@@ -94,11 +105,14 @@ public class Ini : MonoBehaviour {
     {
         string path = "/UI/MainPage/";
         yield return GetSpriteListFromStreamAsset(path, "jpg", ValueSheet.MainUIsprites);
+
+        string path2 = "/UI/MainPage2/";
+        yield return GetSpriteListFromStreamAsset(path2, "jpg", ValueSheet.MainUI2sprites);
         //foreach (var item in ValueSheet.MainUIsprites)
         //{
         //    Debug.Log(item.name);
         //}
-       
+
     }
 
     IEnumerator ReadIntroUIsprites()

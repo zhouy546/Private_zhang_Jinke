@@ -58,17 +58,14 @@ public class ReadJson : MonoBehaviour {
 
         }
 
-        for (int i = 0; i < itemDate["Intro"].Count; i++)
+
+        for (int i = 0; i < itemDate["information2"].Count; i++)
 
         {
-            SetupNodeList(i, ref ValueSheet.Intro_NodeList, "Intro");
-        }
-
-        for (int i = 0; i < itemDate["Strategy"].Count; i++)
-        {
-            SetupNodeList(i, ref ValueSheet.strategy_NodeList, "Strategy");
+            SetupNodeList(i, ref ValueSheet.NodeList2, "information2");
 
         }
+
 
 
 
@@ -76,6 +73,11 @@ public class ReadJson : MonoBehaviour {
 
         ValueSheet.BGMVolume = float.Parse(itemDate["Setup"][0]["BGMVolume"].ToString());
         ValueSheet.MainVideoUrl =itemDate["Setup"][0]["MainVideUrl"].ToString();
+
+        foreach (var item in ValueSheet.NodeList2)
+        {
+            Debug.Log(item.ID);
+        }
 
       
 

@@ -141,17 +141,17 @@ public class OverriderCameraMove : MonoBehaviour {
         MoveTo(IntroNodeCtr.instance.GetTargetCamPos(id), .5f);
     }
 
-    public void Go(int ID, Dictionary<int, GameObject> ID_Node_keyValuePairs)
+    public void Go(int ID, Dictionary<int, GameObject> ID_Node_keyValuePairs,ICtr ctr,float offset = 0)
     {
 
-        BottomBarCtr.instance.updateBar(ID,(float)ValueSheet.NodeList.Count);
+        BottomBarCtr.instance.updateBar(ID,(float)ID_Node_keyValuePairs.Count);
 
         cameraMove();
 
         LeanTween.cancel(this.gameObject);
 
 
-        StartCoroutine(MoveToTarget(getRotue(ID, ID_Node_keyValuePairs), getGoThroughTime(ID), ID));
+        StartCoroutine(MoveToTarget(getRotue(ID, ID_Node_keyValuePairs,offset), getGoThroughTime(ID), ID, ctr));
     }
 
 
@@ -179,7 +179,7 @@ public class OverriderCameraMove : MonoBehaviour {
     }
 
 
-    IEnumerator MoveToTarget(List<RotueNode> rotueNodes, float timeEachSetp, int id)
+    IEnumerator MoveToTarget(List<RotueNode> rotueNodes, float timeEachSetp, int id,ICtr ctr)
     {
        // Debug.Log(timeEachSetp);
         TargetID = id;
@@ -193,8 +193,8 @@ public class OverriderCameraMove : MonoBehaviour {
 
             if (i == rotueNodes.Count - 1)//going in 
             {
-                DefaultNodesCtr.hideMainPic();
-                DefaultNodesCtr.ShowDescription(id);
+                ctr.hideMainPicDe();
+                ctr.ShowDescriptionDe(id);
                 yield return new WaitForSeconds(.5f);
               //  SoundMangager.instance.GoThrough();
                 MoveTo(rotueNodes[i].pos, timeEachSetp, () => updatePerviousID(id));
@@ -204,7 +204,7 @@ public class OverriderCameraMove : MonoBehaviour {
             }
             else
             {
-                DefaultNodesCtr.showMainPic();
+                ctr.showMainPicDe();
                 MoveTo(rotueNodes[i].pos, timeEachSetp, () => updatePerviousID(id));
                 RotateTo(rotueNodes[i].rotationAngle, timeEachSetp);
             }
@@ -226,11 +226,11 @@ public class OverriderCameraMove : MonoBehaviour {
         }
     }
 
-    List<RotueNode> getRotue(int id, Dictionary<int, GameObject> ID_Node_keyValuePairs)
+    List<RotueNode> getRotue(int id, Dictionary<int, GameObject> ID_Node_keyValuePairs,float offset = 0)
     {
 
         List<Vector3> rot = new List<Vector3>();
-        rot = GetStep(id);
+        rot = GetStep(id, ID_Node_keyValuePairs, offset);
         // Debug.Log(rot.Count);
         List<RotueNode> rotue = new List<RotueNode>();
 
@@ -254,7 +254,7 @@ public class OverriderCameraMove : MonoBehaviour {
         return rotue;
     }
 
-    List<Vector3> GetStep(int id)
+    List<Vector3> GetStep(int id, Dictionary<int, GameObject> ID_Node_keyValuePairs,float offset = 0)
     {
         List<Vector3> pos = new List<Vector3>();
 
@@ -264,14 +264,14 @@ public class OverriderCameraMove : MonoBehaviour {
         {
             for (int i = 0; i <= step; i++)
             {
-                pos.Add(new Vector3(0, 15.3f, -30 + (PerviousID + i) * ValueSheet.NodeDistance));
+                pos.Add(new Vector3(0+offset, 15.3f, -30 + (PerviousID + i) * ValueSheet.NodeDistance));
             }
         }
         else if (PerviousID - id > 0)//从大到小走，向后
         {
             for (int i = 0; i <= step; i++)
             {
-                pos.Add(new Vector3(0, 15.3f, -30 + (PerviousID - i) * ValueSheet.NodeDistance));
+                pos.Add(new Vector3(0+offset, 15.3f, -30 + (PerviousID - i) * ValueSheet.NodeDistance));
             }
         }
         else if (PerviousID - id == 0)
@@ -279,7 +279,7 @@ public class OverriderCameraMove : MonoBehaviour {
 
         }
 
-        pos.Add(ValueSheet.ID_Node_keyValuePairs[id].GetComponent<NodeCtr>().cameraSetTrans.position);
+        pos.Add(ID_Node_keyValuePairs[id].GetComponent<NodeCtr>().cameraSetTrans.position);
 
         foreach (var item in pos)
         {

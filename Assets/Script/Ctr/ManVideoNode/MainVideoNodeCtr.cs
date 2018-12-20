@@ -21,6 +21,7 @@ public class MainVideoNodeCtr : ICtr {
     {
         DealWithUDPMessage.ToIntro += hide;
         DealWithUDPMessage.ToDefaultScene += hide;
+        DealWithUDPMessage.ToDefaultScene2 += hide;
         DealWithUDPMessage.ToLogoWell += hide;
         DealWithUDPMessage.ToScreenProtect += hide;
         DealWithUDPMessage.ToStrategy += hide;

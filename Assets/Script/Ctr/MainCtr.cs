@@ -9,8 +9,9 @@ public class MainCtr : ICtr {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        initialization();
+
+    }
 
     public override void initialization()
     {

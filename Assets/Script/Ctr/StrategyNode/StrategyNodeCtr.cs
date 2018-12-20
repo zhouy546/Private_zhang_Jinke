@@ -26,6 +26,7 @@ public class StrategyNodeCtr : ICtr {
     private void OnEnable()
     {
         DealWithUDPMessage.ToDefaultScene += hide;
+        DealWithUDPMessage.ToDefaultScene2 += hide;
         DealWithUDPMessage.ToLogoWell += hide;
         DealWithUDPMessage.ToScreenProtect += hide;
         DealWithUDPMessage.ToIntro += hide;
@@ -38,6 +39,9 @@ public class StrategyNodeCtr : ICtr {
 
         DefaultNodesCtr.HideMainPic += hide;
         DefaultNodesCtr.ShowMainPic += hide;
+
+        DefaultNodesCtr2.HideMainPic += hide;
+        DefaultNodesCtr2.ShowMainPic += hide;
     }
 
     private void OnDisable()
@@ -55,6 +59,9 @@ public class StrategyNodeCtr : ICtr {
 
         DefaultNodesCtr.HideMainPic -= hide;
         DefaultNodesCtr.ShowMainPic -= hide;
+
+        DefaultNodesCtr2.HideMainPic -= hide;
+        DefaultNodesCtr2.ShowMainPic -= hide;
     }
 
 

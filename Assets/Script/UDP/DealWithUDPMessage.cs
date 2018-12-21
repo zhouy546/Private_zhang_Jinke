@@ -67,110 +67,17 @@ public class DealWithUDPMessage : MonoBehaviour {
             {
                 toScreenProtect();
             }
-            else if (int.Parse(dataTest) >= 10001 && int.Parse(dataTest) <= 10010)
+            else if (ValueSheet.NodeList_UDP_ID.ContainsKey(dataTest))
             {//项目介绍
                 toDefaultScene();
-                if (dataTest == "10001")
-                {
-                    OverriderCameraMove.instance.Go(0, ValueSheet.ID_Node_keyValuePairs,DefaultNodesCtr.instance);
-                }
-                else if (dataTest == "10002")
-                {
-                    OverriderCameraMove.instance.Go(1, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
 
-                }
-                else if (dataTest == "10003")
-                {
-                    OverriderCameraMove.instance.Go(2, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
-
-                }
-                else if (dataTest == "10004")
-                {
-                    OverriderCameraMove.instance.Go(3, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
-
-                }
-                else if (dataTest == "10005")
-                {
-                    OverriderCameraMove.instance.Go(4, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
-
-                }
-                else if (dataTest == "10006")
-                {
-                    OverriderCameraMove.instance.Go(5, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
-
-                }
-                else if (dataTest == "10007")
-                {
-                    OverriderCameraMove.instance.Go(6, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
-
-                }
-                else if (dataTest == "10008")
-                {
-                    OverriderCameraMove.instance.Go(7, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
-
-                }
-                else if (dataTest == "10009")
-                {
-                    OverriderCameraMove.instance.Go(8, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
-
-                }
-                else if (dataTest == "10010")
-                {
-                    OverriderCameraMove.instance.Go(9, ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
-
-                }
+                OverriderCameraMove.instance.Go(ValueSheet.NodeList_UDP_ID[dataTest], ValueSheet.ID_Node_keyValuePairs,DefaultNodesCtr.instance);
+                               
             }
-            else if (int.Parse(dataTest) >= 10031 && int.Parse(dataTest) <= 10040) {
+            else if (ValueSheet.NodeList2_UDP_ID.ContainsKey(dataTest)) {
                 toDefaultScene2();
 
-                if (dataTest == "10031")
-                {
-                    OverriderCameraMove.instance.Go(0, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance,800f);
-                }
-                else if (dataTest == "10032")
-                {
-                    OverriderCameraMove.instance.Go(1, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
-
-                }
-                else if (dataTest == "10033")
-                {
-                    OverriderCameraMove.instance.Go(2, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
-
-                }
-                else if (dataTest == "10034")
-                {
-                    OverriderCameraMove.instance.Go(3, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
-
-                }
-                else if (dataTest == "10035")
-                {
-                    OverriderCameraMove.instance.Go(4, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
-
-                }
-                else if (dataTest == "10036")
-                {
-                    OverriderCameraMove.instance.Go(5, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
-
-                }
-                else if (dataTest == "10037")
-                {
-                    OverriderCameraMove.instance.Go(6, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
-
-                }
-                else if (dataTest == "10038")
-                {
-                    OverriderCameraMove.instance.Go(7, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
-
-                }
-                else if (dataTest == "10039")
-                {
-                    OverriderCameraMove.instance.Go(8, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
-
-                }
-                else if (dataTest == "10040")
-                {
-                    OverriderCameraMove.instance.Go(9, ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 800f);
-                }
+                OverriderCameraMove.instance.Go(ValueSheet.NodeList2_UDP_ID[dataTest], ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance,200);           
             }
 
             else if (int.Parse(dataTest) >= 10011 && int.Parse(dataTest) <= 10012)

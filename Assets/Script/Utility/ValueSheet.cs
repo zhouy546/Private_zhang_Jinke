@@ -40,14 +40,10 @@ public class ValueSheet : MonoBehaviour {
     public static List<Sprite> ChinaMapUIsprites = new List<Sprite>();
 
     public static List<Node> NodeList = new List<Node>();
+    public static Dictionary<string, int> NodeList_UDP_ID = new Dictionary<string, int>(); 
 
     public static List<Node> NodeList2 = new List<Node>();
-
-
-
-
-
-
+    public static Dictionary<string, int> NodeList2_UDP_ID = new Dictionary<string, int>();
 
 
     public static List<NodeCtr> nodeCtrs = new List<NodeCtr>();

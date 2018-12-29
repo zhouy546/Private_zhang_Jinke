@@ -23,10 +23,10 @@ public class VideoDescriptionCtr : ICtr {
         StopVideo();
     }
 
-    public override void ShowAll(float time = 1)
+    public override void ShowAll(List<Node> nodes,float time = 1)
     {
         animator.SetBool("Show", true);
-        PlayVideo(ValueSheet.NodeList[int.Parse(nodeCtr.ID)].VideoName);
+        PlayVideo(nodes[int.Parse(nodeCtr.ID)].VideoName);
     }
 
     public override void PlayVideo(string str)

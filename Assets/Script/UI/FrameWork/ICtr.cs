@@ -33,6 +33,10 @@ public class ICtr : MonoBehaviour {
         }
     }
 
+    public virtual void ShowAll(List<Node> nodes, float time = 1)
+    {
+    }
+
     public virtual void HideAll(float time = 1)
     {
         foreach (var item in AllNimages)

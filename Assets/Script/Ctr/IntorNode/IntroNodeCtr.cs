@@ -23,17 +23,17 @@ public class IntroNodeCtr : ICtr {
 
     public void OnEnable()
     {
-        DealWithUDPMessage.ToIntro += introNodesGridCtr.show;
+        //DealWithUDPMessage.ToIntro += introNodesGridCtr.show;
         DealWithUDPMessage.ToDefaultScene += introNodesGridCtr.hide;
         DealWithUDPMessage.ToDefaultScene2 += introNodesGridCtr.hide;
 
-        DealWithUDPMessage.ToLogoWell += introNodesGridCtr.hide;
+       // DealWithUDPMessage.ToLogoWell += introNodesGridCtr.hide;
         DealWithUDPMessage.ToScreenProtect +=introNodesGridCtr.hide;
-        DealWithUDPMessage.ToStrategy += introNodesGridCtr.hide;
-        DealWithUDPMessage.ToYeWuMoXing += introNodesGridCtr.hide;
-        DealWithUDPMessage.ToCo += introNodesGridCtr.hide;
-        DealWithUDPMessage.ToMatching += introNodesGridCtr.hide;
-        DealWithUDPMessage.ToChinaMap += introNodesGridCtr.hide;
+        //DealWithUDPMessage.ToStrategy += introNodesGridCtr.hide;
+        //DealWithUDPMessage.ToYeWuMoXing += introNodesGridCtr.hide;
+        //DealWithUDPMessage.ToCo += introNodesGridCtr.hide;
+        //DealWithUDPMessage.ToMatching += introNodesGridCtr.hide;
+        //DealWithUDPMessage.ToChinaMap += introNodesGridCtr.hide;
         DealWithUDPMessage.ToMainVideo +=introNodesGridCtr.hide;
 
         DefaultNodesCtr.HideMainPic += introNodesGridCtr.hide;
@@ -46,17 +46,17 @@ public class IntroNodeCtr : ICtr {
 
     public void OnDisable()
     {
-        DealWithUDPMessage.ToIntro -= introNodesGridCtr.show;
+        //DealWithUDPMessage.ToIntro -= introNodesGridCtr.show;
 
         DealWithUDPMessage.ToDefaultScene -= introNodesGridCtr.hide;
-        DealWithUDPMessage.ToLogoWell -= introNodesGridCtr.hide;
+        //DealWithUDPMessage.ToLogoWell -= introNodesGridCtr.hide;
         DealWithUDPMessage.ToScreenProtect -= introNodesGridCtr.hide;
-        DealWithUDPMessage.ToStrategy -= introNodesGridCtr.hide;
+        //DealWithUDPMessage.ToStrategy -= introNodesGridCtr.hide;
 
-        DealWithUDPMessage.ToYeWuMoXing -= introNodesGridCtr.hide;
-        DealWithUDPMessage.ToCo -= introNodesGridCtr.hide;
-        DealWithUDPMessage.ToMatching -=introNodesGridCtr.hide;
-        DealWithUDPMessage.ToChinaMap -= introNodesGridCtr.hide;
+        //DealWithUDPMessage.ToYeWuMoXing -= introNodesGridCtr.hide;
+        //DealWithUDPMessage.ToCo -= introNodesGridCtr.hide;
+        //DealWithUDPMessage.ToMatching -=introNodesGridCtr.hide;
+        //DealWithUDPMessage.ToChinaMap -= introNodesGridCtr.hide;
         DealWithUDPMessage.ToMainVideo += introNodesGridCtr.hide;
 
         DefaultNodesCtr.HideMainPic -= introNodesGridCtr.hide;

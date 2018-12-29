@@ -32,13 +32,14 @@ public class ScreenProtectCtr : ICtr {
         DealWithUDPMessage.ToScreenProtect += show;
         DealWithUDPMessage.ToDefaultScene += hide;
         DealWithUDPMessage.ToDefaultScene2 += hide;
-        DealWithUDPMessage.ToLogoWell += hide;
-        DealWithUDPMessage.ToIntro += hide;
-        DealWithUDPMessage.ToStrategy += hide;
-        DealWithUDPMessage.ToYeWuMoXing += hide;
-        DealWithUDPMessage.ToCo += hide;
-        DealWithUDPMessage.ToMatching += hide;
-        DealWithUDPMessage.ToChinaMap += hide;
+        DealWithUDPMessage.ToDefaultScene3 += hide;
+        //DealWithUDPMessage.ToLogoWell += hide;
+        //DealWithUDPMessage.ToIntro += hide;
+        //DealWithUDPMessage.ToStrategy += hide;
+        //DealWithUDPMessage.ToYeWuMoXing += hide;
+        //DealWithUDPMessage.ToCo += hide;
+        //DealWithUDPMessage.ToMatching += hide;
+        //DealWithUDPMessage.ToChinaMap += hide;
         DealWithUDPMessage.ToMainVideo += hide;
 
         DefaultNodesCtr.HideMainPic += hide;
@@ -52,13 +53,15 @@ public class ScreenProtectCtr : ICtr {
     {
         DealWithUDPMessage.ToScreenProtect -= show;
         DealWithUDPMessage.ToDefaultScene -= hide;
-        DealWithUDPMessage.ToLogoWell -= hide;
-        DealWithUDPMessage.ToIntro -= hide;
-        DealWithUDPMessage.ToStrategy -= hide;
-        DealWithUDPMessage.ToYeWuMoXing -= hide;
-        DealWithUDPMessage.ToCo -= hide;
-        DealWithUDPMessage.ToMatching -= hide;
-        DealWithUDPMessage.ToChinaMap -= hide;
+        DealWithUDPMessage.ToDefaultScene2 -= hide;
+        DealWithUDPMessage.ToDefaultScene3 -= hide;
+        //DealWithUDPMessage.ToLogoWell -= hide;
+        //DealWithUDPMessage.ToIntro -= hide;
+        //DealWithUDPMessage.ToStrategy -= hide;
+        //DealWithUDPMessage.ToYeWuMoXing -= hide;
+        //DealWithUDPMessage.ToCo -= hide;
+        //DealWithUDPMessage.ToMatching -= hide;
+        //DealWithUDPMessage.ToChinaMap -= hide;
         DealWithUDPMessage.ToMainVideo -= hide;
 
         DefaultNodesCtr.HideMainPic -= hide;

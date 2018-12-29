@@ -20,7 +20,7 @@ public class Ini : MonoBehaviour {
 
     IEnumerator initialization()
     {
-        Screen.SetResolution(2432, 960, false);
+        Screen.SetResolution(3360, 1066, false);
 
         dealWithUDPMessage = FindObjectOfType<DealWithUDPMessage>();
 
@@ -32,7 +32,7 @@ public class Ini : MonoBehaviour {
 
         screenProtectCtr = FindObjectOfType<ScreenProtectCtr>();
 
-        chinaMapNodeCtr = FindObjectOfType<ChinaMapNodeCtr>();
+       // chinaMapNodeCtr = FindObjectOfType<ChinaMapNodeCtr>();
 
         soundMangager = FindObjectOfType<SoundMangager>();
 
@@ -48,7 +48,7 @@ public class Ini : MonoBehaviour {
 
         createUI.Initialization();
 
-        chinaMapNodeCtr.initialization();
+        //chinaMapNodeCtr.initialization();
 
         OverridecameraMover.initializtion(new Vector3(0, 15.3f, 300f), new Vector3(0, 15.3f, -30f));
     }
@@ -59,17 +59,17 @@ public class Ini : MonoBehaviour {
 
         yield return StartCoroutine(ReadDescription());
 
-        yield return StartCoroutine(ReadIntroUIsprites());
+        //yield return StartCoroutine(ReadIntroUIsprites());
 
-        yield return StartCoroutine(ReadYeWuMoXingUIsprites());
+        //yield return StartCoroutine(ReadYeWuMoXingUIsprites());
 
-        yield return StartCoroutine(ReadCoNodeUIsprites());
+        //yield return StartCoroutine(ReadCoNodeUIsprites());
 
-        yield return StartCoroutine(ReadMatchingUIsprites());
+        //yield return StartCoroutine(ReadMatchingUIsprites());
 
-        yield return StartCoroutine(ReadStrategyUIsprites());
+        //yield return StartCoroutine(ReadStrategyUIsprites());
 
-        yield return StartCoroutine(ReadChinaMapUIsprites());
+        //yield return StartCoroutine(ReadChinaMapUIsprites());
     }
 
 
@@ -78,9 +78,9 @@ public class Ini : MonoBehaviour {
         for (int i = 0; i < ValueSheet.NodeList.Count; i++)
         {
             List<Sprite> sp = new List<Sprite>();
-            string path = "/UI/Description/" + i.ToString() + "/";
+            string path = "/UI/Description/"+ i.ToString() + "/";
             // Debug.Log(path);
-            yield return GetSpriteListFromStreamAsset(path, "png", sp);
+            yield return GetSpriteListFromStreamAsset(path, "jpg", sp);
 
             ValueSheet.DescriptionkeyValuePairs.Add(i, sp);
         }
@@ -88,11 +88,22 @@ public class Ini : MonoBehaviour {
         for (int i = 0; i < ValueSheet.NodeList2.Count; i++)
         {
             List<Sprite> sp = new List<Sprite>();
-            string path = "/UI/Description2/" + i.ToString() + "/";
+            string path = "/UI/Description2/"+i.ToString()+"/";
             // Debug.Log(path);
-            yield return GetSpriteListFromStreamAsset(path, "png", sp);
+            yield return GetSpriteListFromStreamAsset(path, "jpg", sp);
 
             ValueSheet.Description2keyValuePairs.Add(i, sp);
+        }
+
+
+        for (int i = 0; i < ValueSheet.NodeList3.Count; i++)
+        {
+            List<Sprite> sp = new List<Sprite>();
+            string path = "/UI/Description3/"+ i.ToString() + "/";
+            // Debug.Log(path);
+            yield return GetSpriteListFromStreamAsset(path, "jpg", sp);
+
+            ValueSheet.Description3keyValuePairs.Add(i, sp);
         }
 
 
@@ -108,48 +119,48 @@ public class Ini : MonoBehaviour {
 
         string path2 = "/UI/MainPage2/";
         yield return GetSpriteListFromStreamAsset(path2, "jpg", ValueSheet.MainUI2sprites);
-        //foreach (var item in ValueSheet.MainUIsprites)
-        //{
-        //    Debug.Log(item.name);
-        //}
+
+        string path3 = "/UI/MainPage3/";
+        yield return GetSpriteListFromStreamAsset(path3, "jpg", ValueSheet.MainUI3sprites);
+
 
     }
 
-    IEnumerator ReadIntroUIsprites()
-    {
-        string path = "/UI/Intro/";
-        yield return GetSpriteListFromStreamAsset(path, "png", ValueSheet.IntroUIsprites);
-    }
+    //IEnumerator ReadIntroUIsprites()
+    //{
+    //    string path = "/UI/Intro/";
+    //    yield return GetSpriteListFromStreamAsset(path, "png", ValueSheet.IntroUIsprites);
+    //}
 
-    IEnumerator ReadYeWuMoXingUIsprites()
-    {
-        string path = "/UI/YeWuMoXing/";
-        yield return GetSpriteListFromStreamAsset(path, "png", ValueSheet.YeWuMoXingUIsprites);
-    }
+    //IEnumerator ReadYeWuMoXingUIsprites()
+    //{
+    //    string path = "/UI/YeWuMoXing/";
+    //    yield return GetSpriteListFromStreamAsset(path, "png", ValueSheet.YeWuMoXingUIsprites);
+    //}
 
-    IEnumerator ReadCoNodeUIsprites()
-    {
-        string path = "/UI/Co/";
-        yield return GetSpriteListFromStreamAsset(path, "png", ValueSheet.CoNodeUIsprites);
-    }
+    //IEnumerator ReadCoNodeUIsprites()
+    //{
+    //    string path = "/UI/Co/";
+    //    yield return GetSpriteListFromStreamAsset(path, "png", ValueSheet.CoNodeUIsprites);
+    //}
 
-    IEnumerator ReadMatchingUIsprites()
-    {
-        string path = "/UI/Matching/";
-        yield return GetSpriteListFromStreamAsset(path, "png", ValueSheet.MatchingUIsprites);
-    }
+    //IEnumerator ReadMatchingUIsprites()
+    //{
+    //    string path = "/UI/Matching/";
+    //    yield return GetSpriteListFromStreamAsset(path, "png", ValueSheet.MatchingUIsprites);
+    //}
 
-    IEnumerator ReadStrategyUIsprites()
-    {
-        string path = "/UI/Strategy/";
-        yield return GetSpriteListFromStreamAsset(path, "png", ValueSheet.StrategyUIsprites);
-    }
+    //IEnumerator ReadStrategyUIsprites()
+    //{
+    //    string path = "/UI/Strategy/";
+    //    yield return GetSpriteListFromStreamAsset(path, "png", ValueSheet.StrategyUIsprites);
+    //}
 
-    IEnumerator ReadChinaMapUIsprites()
-    {
-        string path = "/UI/ChinaMap/";
-        yield return GetSpriteListFromStreamAsset(path, "png", ValueSheet.ChinaMapUIsprites);
-    }
+    //IEnumerator ReadChinaMapUIsprites()
+    //{
+    //    string path = "/UI/ChinaMap/";
+    //    yield return GetSpriteListFromStreamAsset(path, "png", ValueSheet.ChinaMapUIsprites);
+    //}
 
     IEnumerator GetSpriteListFromStreamAsset(string path, string suffix, List<Sprite> sprites)
     {

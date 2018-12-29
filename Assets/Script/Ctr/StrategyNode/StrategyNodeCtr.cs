@@ -27,14 +27,14 @@ public class StrategyNodeCtr : ICtr {
     {
         DealWithUDPMessage.ToDefaultScene += hide;
         DealWithUDPMessage.ToDefaultScene2 += hide;
-        DealWithUDPMessage.ToLogoWell += hide;
+        //DealWithUDPMessage.ToLogoWell += hide;
         DealWithUDPMessage.ToScreenProtect += hide;
-        DealWithUDPMessage.ToIntro += hide;
-        DealWithUDPMessage.ToStrategy += show;
-        DealWithUDPMessage.ToYeWuMoXing += hide;
-        DealWithUDPMessage.ToCo += hide;
-        DealWithUDPMessage.ToMatching += hide;
-        DealWithUDPMessage.ToChinaMap += hide;
+        //DealWithUDPMessage.ToIntro += hide;
+        //DealWithUDPMessage.ToStrategy += show;
+        //DealWithUDPMessage.ToYeWuMoXing += hide;
+        //DealWithUDPMessage.ToCo += hide;
+        //DealWithUDPMessage.ToMatching += hide;
+        //DealWithUDPMessage.ToChinaMap += hide;
         DealWithUDPMessage.ToMainVideo += hide;
 
         DefaultNodesCtr.HideMainPic += hide;
@@ -47,14 +47,14 @@ public class StrategyNodeCtr : ICtr {
     private void OnDisable()
     {
         DealWithUDPMessage.ToDefaultScene -= hide;
-        DealWithUDPMessage.ToLogoWell -= hide;
+        //DealWithUDPMessage.ToLogoWell -= hide;
         DealWithUDPMessage.ToScreenProtect -= hide;
-        DealWithUDPMessage.ToIntro -= hide;
-       DealWithUDPMessage.ToStrategy -= show;
-        DealWithUDPMessage.ToYeWuMoXing -= hide;
-        DealWithUDPMessage.ToCo -= hide;
-        DealWithUDPMessage.ToMatching -= hide;
-        DealWithUDPMessage.ToChinaMap -= hide;
+       // DealWithUDPMessage.ToIntro -= hide;
+       //DealWithUDPMessage.ToStrategy -= show;
+       // DealWithUDPMessage.ToYeWuMoXing -= hide;
+       // DealWithUDPMessage.ToCo -= hide;
+       // DealWithUDPMessage.ToMatching -= hide;
+       // DealWithUDPMessage.ToChinaMap -= hide;
         DealWithUDPMessage.ToMainVideo -= hide;
 
         DefaultNodesCtr.HideMainPic -= hide;

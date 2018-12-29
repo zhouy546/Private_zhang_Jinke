@@ -18,17 +18,16 @@ public class SoundMangager : MonoBehaviour {
 
     private void OnEnable()
     {
-        DealWithUDPMessage.ToIntro += Select;
-        DealWithUDPMessage.ToDefaultScene += Select;
-        DealWithUDPMessage.ToDefaultScene2 += Select;
-        DealWithUDPMessage.ToLogoWell += Select;
-        DealWithUDPMessage.ToScreenProtect += Select;
-        DealWithUDPMessage.ToStrategy += Select;
 
-        DealWithUDPMessage.ToYeWuMoXing += Select;
-        DealWithUDPMessage.ToCo += Select;
-        DealWithUDPMessage.ToMatching += Select;
-        DealWithUDPMessage.ToChinaMap += Select;
+        DealWithUDPMessage.ToDefaultScene += Select;
+
+        DealWithUDPMessage.ToDefaultScene2 += Select;
+
+        DealWithUDPMessage.ToDefaultScene3 += Select;
+
+
+        DealWithUDPMessage.ToScreenProtect += Select;
+
         DealWithUDPMessage.ToMainVideo += Select;
 
         DealWithUDPMessage.ToMainVideo += StopBGM;
@@ -37,16 +36,15 @@ public class SoundMangager : MonoBehaviour {
 
     private void OnDisable()
     {
-        DealWithUDPMessage.ToIntro -= Select;
-        DealWithUDPMessage.ToDefaultScene -= Select;
-        DealWithUDPMessage.ToLogoWell -= Select;
-        DealWithUDPMessage.ToScreenProtect -= Select;
-        DealWithUDPMessage.ToStrategy -= Select;
 
-        DealWithUDPMessage.ToYeWuMoXing -= Select;
-        DealWithUDPMessage.ToCo -= Select;
-        DealWithUDPMessage.ToMatching -= Select;
-        DealWithUDPMessage.ToChinaMap -= Select;
+        DealWithUDPMessage.ToDefaultScene -= Select;
+
+        DealWithUDPMessage.ToDefaultScene2 -= Select;
+
+        DealWithUDPMessage.ToDefaultScene3 -= Select;
+
+        DealWithUDPMessage.ToScreenProtect -= Select;
+
         DealWithUDPMessage.ToMainVideo -= Select;
 
         DealWithUDPMessage.ToMainVideo -= StopBGM;

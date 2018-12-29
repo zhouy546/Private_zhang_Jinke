@@ -19,17 +19,18 @@ public class MainVideoNodeCtr : ICtr {
 
     private void OnEnable()
     {
-        DealWithUDPMessage.ToIntro += hide;
+       // DealWithUDPMessage.ToIntro += hide;
         DealWithUDPMessage.ToDefaultScene += hide;
         DealWithUDPMessage.ToDefaultScene2 += hide;
-        DealWithUDPMessage.ToLogoWell += hide;
+        DealWithUDPMessage.ToDefaultScene3 += hide;
+        //DealWithUDPMessage.ToLogoWell += hide;
         DealWithUDPMessage.ToScreenProtect += hide;
-        DealWithUDPMessage.ToStrategy += hide;
+       // DealWithUDPMessage.ToStrategy += hide;
 
-        DealWithUDPMessage.ToYeWuMoXing += hide;
-        DealWithUDPMessage.ToCo += hide;
-        DealWithUDPMessage.ToMatching += hide;
-        DealWithUDPMessage.ToChinaMap += hide;
+        //DealWithUDPMessage.ToYeWuMoXing += hide;
+        //DealWithUDPMessage.ToCo += hide;
+        //DealWithUDPMessage.ToMatching += hide;
+        //DealWithUDPMessage.ToChinaMap += hide;
         DealWithUDPMessage.ToMainVideo += show;
         DealWithUDPMessage.PlayMainVideo += PlayVideo;
         //DefaultNodesCtr.HideMainPic += hide;
@@ -38,16 +39,18 @@ public class MainVideoNodeCtr : ICtr {
 
     private void OnDisable()
     {
-        DealWithUDPMessage.ToIntro -= hide;
+      //  DealWithUDPMessage.ToIntro -= hide;
         DealWithUDPMessage.ToDefaultScene -= hide;
-        DealWithUDPMessage.ToLogoWell -= hide;
+        DealWithUDPMessage.ToDefaultScene2 -= hide;
+        DealWithUDPMessage.ToDefaultScene3 -= hide;
+        //DealWithUDPMessage.ToLogoWell -= hide;
         DealWithUDPMessage.ToScreenProtect -= hide;
-        DealWithUDPMessage.ToStrategy -= hide;
+        //DealWithUDPMessage.ToStrategy -= hide;
 
-        DealWithUDPMessage.ToYeWuMoXing -= hide;
-        DealWithUDPMessage.ToCo -= hide;
-        DealWithUDPMessage.ToMatching -= hide;
-        DealWithUDPMessage.ToChinaMap -= hide;
+        //DealWithUDPMessage.ToYeWuMoXing -= hide;
+        //DealWithUDPMessage.ToCo -= hide;
+        //DealWithUDPMessage.ToMatching -= hide;
+        //DealWithUDPMessage.ToChinaMap -= hide;
         DealWithUDPMessage.ToMainVideo -= show;
         DealWithUDPMessage.PlayMainVideo -= PlayVideo;
 

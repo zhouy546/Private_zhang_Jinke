@@ -30,7 +30,7 @@ public class DefaultNodesCtr2 : ICtr {
 
     public override void ShowDescriptionDe(int id)
     {
-        ValueSheet.nodeCtrs2[id].ShowDescription();
+        ValueSheet.nodeCtrs2[id].ShowDescription(ValueSheet.NodeList2);
     }
 
 }

@@ -25,29 +25,33 @@ public class BottomBarCtr : ICtr {
     {
         DealWithUDPMessage.ToDefaultScene += Show;
         DealWithUDPMessage.ToDefaultScene2 += Show;
+        DealWithUDPMessage.ToDefaultScene3 += Show;
 
-        DealWithUDPMessage.ToLogoWell+= Hide;
-        DealWithUDPMessage.ToIntro+=Show;
-        DealWithUDPMessage.ToStrategy += Show;
+        //DealWithUDPMessage.ToLogoWell+= Hide;
+        //DealWithUDPMessage.ToIntro+=Show;
+        //DealWithUDPMessage.ToStrategy += Show;
         DealWithUDPMessage.ToScreenProtect+= Hide;
-        DealWithUDPMessage.ToYeWuMoXing+= Hide;
-        DealWithUDPMessage.ToCo+= Hide;
-        DealWithUDPMessage.ToMatching+= Hide;
-        DealWithUDPMessage.ToChinaMap+= Hide;
+        //DealWithUDPMessage.ToYeWuMoXing+= Hide;
+        //DealWithUDPMessage.ToCo+= Hide;
+        //DealWithUDPMessage.ToMatching+= Hide;
+        //DealWithUDPMessage.ToChinaMap+= Hide;
         DealWithUDPMessage.ToMainVideo+= Hide;
 }
 
     private void OnDisable()
     {
         DealWithUDPMessage.ToDefaultScene -= Show;
-        DealWithUDPMessage.ToLogoWell -= Hide;
-        DealWithUDPMessage.ToIntro -= Show;
-        DealWithUDPMessage.ToStrategy -= Show;
+        DealWithUDPMessage.ToDefaultScene2 -= Show;
+        DealWithUDPMessage.ToDefaultScene3 -= Show;
+
+        //DealWithUDPMessage.ToLogoWell -= Hide;
+        //DealWithUDPMessage.ToIntro -= Show;
+        //DealWithUDPMessage.ToStrategy -= Show;
         DealWithUDPMessage.ToScreenProtect -= Hide;
-        DealWithUDPMessage.ToYeWuMoXing -= Hide;
-        DealWithUDPMessage.ToCo -= Hide;
-        DealWithUDPMessage.ToMatching -= Hide;
-        DealWithUDPMessage.ToChinaMap -= Hide;
+        //DealWithUDPMessage.ToYeWuMoXing -= Hide;
+        //DealWithUDPMessage.ToCo -= Hide;
+        //DealWithUDPMessage.ToMatching -= Hide;
+        //DealWithUDPMessage.ToChinaMap -= Hide;
         DealWithUDPMessage.ToMainVideo -= Hide;
     }
 

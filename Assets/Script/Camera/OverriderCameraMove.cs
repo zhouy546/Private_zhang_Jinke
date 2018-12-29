@@ -32,11 +32,11 @@ public class OverriderCameraMove : MonoBehaviour {
     public void OnEnable()
     {
         DealWithUDPMessage.ToScreenProtect += toScreeanProtect;
-        DealWithUDPMessage.ToYeWuMoXing += toYeWuMoXing;
-        DealWithUDPMessage.ToMatching += toMatching;
-        DealWithUDPMessage.ToCo += toCo;
-        DealWithUDPMessage.ToChinaMap += toChinaMap;
-        DealWithUDPMessage.ToLogoWell += toLogoWell;
+        //DealWithUDPMessage.ToYeWuMoXing += toYeWuMoXing;
+        //DealWithUDPMessage.ToMatching += toMatching;
+        //DealWithUDPMessage.ToCo += toCo;
+        //DealWithUDPMessage.ToChinaMap += toChinaMap;
+        //DealWithUDPMessage.ToLogoWell += toLogoWell;
 
        DealWithUDPMessage.ToMainVideo += toMainVideo;
 
@@ -49,11 +49,11 @@ public class OverriderCameraMove : MonoBehaviour {
     {
 
         DealWithUDPMessage.ToScreenProtect -= toScreeanProtect;
-        DealWithUDPMessage.ToYeWuMoXing -= toYeWuMoXing;
-        DealWithUDPMessage.ToMatching -= toMatching;
-        DealWithUDPMessage.ToCo -= toCo;
-        DealWithUDPMessage.ToChinaMap -= toChinaMap;
-        DealWithUDPMessage.ToLogoWell -= toLogoWell;
+        //DealWithUDPMessage.ToYeWuMoXing -= toYeWuMoXing;
+        //DealWithUDPMessage.ToMatching -= toMatching;
+        //DealWithUDPMessage.ToCo -= toCo;
+        //DealWithUDPMessage.ToChinaMap -= toChinaMap;
+        //DealWithUDPMessage.ToLogoWell -= toLogoWell;
         DealWithUDPMessage.ToMainVideo -= toMainVideo;
 
      //   MainVideoNodeCtr.OnVideFinished -= goBack;
@@ -194,7 +194,9 @@ public class OverriderCameraMove : MonoBehaviour {
             if (i == rotueNodes.Count - 1)//going in 
             {
                 ctr.hideMainPicDe();
+                Debug.Log(id);
                 ctr.ShowDescriptionDe(id);
+                //Debug.Log(id);
                 yield return new WaitForSeconds(.5f);
               //  SoundMangager.instance.GoThrough();
                 MoveTo(rotueNodes[i].pos, timeEachSetp, () => updatePerviousID(id));

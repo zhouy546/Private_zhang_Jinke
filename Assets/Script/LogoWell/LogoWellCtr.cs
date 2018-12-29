@@ -20,13 +20,13 @@ public class LogoWellCtr : MonoBehaviour {
             instance = this;
         }
          TurnOnLogoWell();
-        DealWithUDPMessage.ToLogoWell += SetTargetPostition;
+       // DealWithUDPMessage.ToLogoWell += SetTargetPostition;
     }
 
     private void OnDisable()
     {
 
-        DealWithUDPMessage.ToLogoWell -= SetTargetPostition;
+       // DealWithUDPMessage.ToLogoWell -= SetTargetPostition;
     }
 
 

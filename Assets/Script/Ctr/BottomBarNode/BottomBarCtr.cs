@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MyUtility;
 public class BottomBarCtr : ICtr {
-    private float canvasWidth = 2428;
+    private float canvasWidth = 3360;
 
     public Transform arrow;
 

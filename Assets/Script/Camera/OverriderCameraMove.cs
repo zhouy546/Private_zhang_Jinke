@@ -13,7 +13,7 @@ public class OverriderCameraMove : MonoBehaviour {
 
     public Transform videoPlayPos;
 
-
+    public Transform[] ImageGalleryOverViewtransforms;
     //public Vector3 tempPos;
 
 
@@ -72,6 +72,24 @@ public class OverriderCameraMove : MonoBehaviour {
         MoveToVideoPlayPos();
     }
 
+
+    public void moveToDefaultNodes() {
+        MoveTo(ImageGalleryOverViewtransforms[0].position, 1f);
+        RotateTo(Vector3.zero);
+
+    }
+    public void moveToDefaultNodes2()
+    {
+        MoveTo(ImageGalleryOverViewtransforms[1].position, 1f);
+        RotateTo(Vector3.zero);
+
+    }
+    public void moveToDefaultNodes3()
+    {
+        MoveTo(ImageGalleryOverViewtransforms[2].position, 1f);
+        RotateTo(Vector3.zero);
+
+    }
 
 
     private void MoveToVideoPlayPos()

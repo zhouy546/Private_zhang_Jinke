@@ -35,7 +35,7 @@ public class DealWithUDPMessage : MonoBehaviour {
     // public static char[] sliceStr;
     private Vector3 CamRotation;
 
-    public string tempstr = "10000";
+    public string tempstr = "4000";
 
     private static bool isInDefaultScreen, isInDefaultScreen2, isInDefaultScreen3;
     //private static bool isInScreenProtect=true;
@@ -58,7 +58,7 @@ public class DealWithUDPMessage : MonoBehaviour {
             Debug.Log(dataTest);
 
 
-            if (dataTest == "10000")
+            if (dataTest == "4000")
             {
                 toScreenProtect();
             }
@@ -81,6 +81,20 @@ public class DealWithUDPMessage : MonoBehaviour {
                 toDefaultScene3();
 
                 OverriderCameraMove.instance.Go(ValueSheet.NodeList3_UDP_ID[dataTest], ValueSheet.ID_Node3_keyValuePairs, DefaultNodesCtr3.instance, -200);
+            }
+
+            else if (dataTest == "1000") {
+                toDefaultScene();
+                OverriderCameraMove.instance.moveToDefaultNodes();
+            }
+            else if (dataTest == "2000") {
+                toDefaultScene2();
+                OverriderCameraMove.instance.moveToDefaultNodes2();
+            }
+            else if (dataTest == "3000")
+            {
+                toDefaultScene3();
+                OverriderCameraMove.instance.moveToDefaultNodes3();
             }
         }
 

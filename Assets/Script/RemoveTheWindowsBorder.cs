@@ -20,8 +20,8 @@ public class RemoveTheWindowsBorder : MonoBehaviour
 
     int _posX = 0;
     int _posY = 0;
-    int _Txtwith = 2432;
-    int _Txtheight = 960;
+    int _Txtwith = 3360;
+    int _Txtheight = 1066;
     void Start()
     {
         StartCoroutine("Setposition");

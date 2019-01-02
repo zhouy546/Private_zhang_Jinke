@@ -8,6 +8,7 @@ Assets/StreamingAssets/
 Assets/MilkyWay/Texture/
 Assets/PostProcessing/Textures/Lens Dirt/
 Assets/MilkyWay/Texture
+Assets/Textures/gui/ScreenProtect/bt/
 
 # Visual Studio cache directory
 .vs/
@@ -39,3 +40,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.zip
+Builds.zip

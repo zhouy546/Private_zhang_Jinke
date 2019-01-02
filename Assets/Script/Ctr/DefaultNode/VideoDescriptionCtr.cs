@@ -8,6 +8,8 @@ public class VideoDescriptionCtr : ICtr {
     public MediaPlayer mediaPlayer;
     public NodeCtr nodeCtr;
 
+    private bool isOpen;
+
     public override void initialization()
     {
         base.initialization();
@@ -31,11 +33,32 @@ public class VideoDescriptionCtr : ICtr {
 
     public override void PlayVideo(string str)
     {
-        mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, str, true);
+        if (!isOpen) {
+            mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, str, true);
+            isOpen = true;
+
+            //Debug.Log("打开视频");
+        }
     }
 
     public override void StopVideo()
     {
-        mediaPlayer.Stop();
+        StartCoroutine(stopVideo());
+    }
+
+    private IEnumerator stopVideo() {
+
+        if (isOpen) {
+
+            mediaPlayer.Stop();
+
+            yield return new WaitForSeconds(1f);
+
+            mediaPlayer.CloseVideo();
+
+            isOpen = false;
+
+            //Debug.Log("关闭视频");
+        }
     }
 }

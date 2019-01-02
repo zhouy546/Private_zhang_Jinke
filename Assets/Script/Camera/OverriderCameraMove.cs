@@ -144,7 +144,7 @@ public class OverriderCameraMove : MonoBehaviour {
     private void toScreeanProtect() {
         cameraMove();
         RotateTo(Vector3.zero);
-        MoveTo(ScreenProtectCtr.instance.CameratransformPos.position,.5f);
+        MoveTo(ScreenProtectCtr.instance.CameratransformPos,.5f);
     }
 
     private void toIntro()

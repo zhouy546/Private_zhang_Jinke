@@ -6,7 +6,7 @@ public class ScreenProtectCtr : ICtr {
     public static ScreenProtectCtr instance;
     public List<ICtr> ctrs = new List<ICtr>();
     public ICtr logoCtr;
-    public Transform CameratransformPos;
+    public Vector3 CameratransformPos = new Vector3(0f,15f,-30f);
 	// Use this for initialization
 	public override void initialization() {
         base.initialization();

@@ -30,7 +30,9 @@ public class NodeCtr : ICtr {
         if (ValueSheet.nodeCtrs.Contains(this))
         {
             DefaultNodesCtr.HideMainPic += hideMainPic;
+
             DefaultNodesCtr.ShowMainPic += showMainImage;
+
             DealWithUDPMessage.ToDefaultScene += showMainImage;
 
             DealWithUDPMessage.ToDefaultScene2 += HideAllImage;
@@ -150,7 +152,8 @@ public class NodeCtr : ICtr {
             {
                 ctrs[i].ShowAll();
             }
-            else {
+            else
+            {
                 ctrs[i].HideAll();
             }
         }
@@ -162,7 +165,7 @@ public class NodeCtr : ICtr {
         {
             if (i == ctrs.IndexOf(ctr))
             {
-                ctrs[i].HideAll();
+               ctrs[i].HideAll();
             }
         }
     }

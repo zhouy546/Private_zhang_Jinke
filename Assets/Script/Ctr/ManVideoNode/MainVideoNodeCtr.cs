@@ -59,12 +59,13 @@ public class MainVideoNodeCtr : ICtr {
     }
 
     public void CheckIsFinish() {
-      //  Debug.Log("finished");
+        Debug.Log("finished");
         hide();
 
-        //SendUPDData.instance.udp_Send("10000", "192.168.1.32", 29020);
 
-        DealWithUDPMessage.instance.MessageManage(DealWithUDPMessage.instance.tempstr);
+        SendUPDData.instance.udp_Send("2000", "192.168.1.12", 29020);
+      //  DealWithUDPMessage.instance.MessageManage("4000");
+        DealWithUDPMessage.instance.MessageManage(DealWithUDPMessage.instance.goBackStr);
 
     }
 
@@ -84,6 +85,8 @@ public class MainVideoNodeCtr : ICtr {
     public override void StopVideo()
     {
         medialPlayer.Stop();
+
+        medialPlayer.CloseVideo();
     }
 
     public void show()

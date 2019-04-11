@@ -86,7 +86,8 @@ public class CreateUI : MonoBehaviour {
         }
     }
 
-    private void CreateDefaultNode3() {
+    private void CreateDefaultNode3()
+    {
         for (int i = 0; i < ValueSheet.NodeList3.Count; i++)
         {
             if (i % 2 == 0)
@@ -100,12 +101,13 @@ public class CreateUI : MonoBehaviour {
                 Vector3 pos = new Vector3(20, 16.3f, i * ValueSheet.NodeDistance);
                 CreateObject<NodeCtr>(NodeR_Default02, i, pos, parent[7], ValueSheet.nodeCtrs3);
             }
-
             ValueSheet.ID_Node3_keyValuePairs.Add(ValueSheet.NodeList3[i].ID, ValueSheet.nodeCtrs3[i].gameObject);
+
+           // Debug.Log(ValueSheet.nodeCtrs3[i]);
             ValueSheet.nodeCtrs3[i].initialization(ValueSheet.MainUI3sprites, ValueSheet.Description3keyValuePairs);
         }
 
-        Debug.Log(ValueSheet.nodeCtrs3.Count);
+        //Debug.Log(ValueSheet.nodeCtrs3.Count);
     }
 
 

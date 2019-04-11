@@ -24,7 +24,7 @@ public class OverriderCameraMove : MonoBehaviour {
             instance = this;
         }
 
-        PerviousID = TargetID = ValueSheet.NodeList.Count - 1;
+        PerviousID = TargetID = 0;// ValueSheet.NodeList.Count - 1;
 
     }
 
@@ -75,20 +75,25 @@ public class OverriderCameraMove : MonoBehaviour {
 
     public void moveToDefaultNodes() {
         MoveTo(ImageGalleryOverViewtransforms[0].position, 1f);
-        RotateTo(Vector3.zero);
-
+        movetoDefaultReset();
     }
+
     public void moveToDefaultNodes2()
     {
         MoveTo(ImageGalleryOverViewtransforms[1].position, 1f);
-        RotateTo(Vector3.zero);
+        movetoDefaultReset();
 
     }
     public void moveToDefaultNodes3()
     {
         MoveTo(ImageGalleryOverViewtransforms[2].position, 1f);
-        RotateTo(Vector3.zero);
+        movetoDefaultReset();
+    }
 
+    private void movetoDefaultReset() {
+        RotateTo(Vector3.zero);
+        BottomBarCtr.instance.updateBar(-1, 4f);
+        PerviousID = 0;
     }
 
 
@@ -187,7 +192,7 @@ public class OverriderCameraMove : MonoBehaviour {
            time = 0.5f / (float)Mathf.Abs(perviousStep - currentStep);
         }
         else {
-            time = 0f;
+            time = 1f;
         }
 
         perviousStep = currentStep;

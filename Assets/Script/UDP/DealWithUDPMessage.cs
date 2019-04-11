@@ -31,13 +31,17 @@ public class DealWithUDPMessage : MonoBehaviour {
 
     public static DealWithUDPMessage instance;
     // public GameObject wellMesh;
-    private string dataTest;
+    public string dataTest;
     // public static char[] sliceStr;
     private Vector3 CamRotation;
 
-    public string tempstr = "4000";
+    //public string tempstr = "4000";
 
     private static bool isInDefaultScreen, isInDefaultScreen2, isInDefaultScreen3;
+
+    private string perviousData="4000";
+
+    public string goBackStr ="4000";
     //private static bool isInScreenProtect=true;
 
 
@@ -49,23 +53,25 @@ public class DealWithUDPMessage : MonoBehaviour {
     /// <param name="_data"></param>
     public void MessageManage(string _data)
     {
-        if (_data != "")
+        if (_data != ""&& _data!=perviousData)
         {
-
+           // CataCtr.instance.HideAll();
 
             dataTest = _data;
 
+            goBackStr = perviousData;
             Debug.Log(dataTest);
 
 
             if (dataTest == "4000")
             {
                 toScreenProtect();
+                CataCtr.instance.HideAll();
             }
             else if (ValueSheet.NodeList_UDP_ID.ContainsKey(dataTest))
             {//项目介绍
                 toDefaultScene();
-
+                CataCtr.instance.HideAll();
                 Debug.Log(ValueSheet.ID_Node_keyValuePairs.Count);
 
                 OverriderCameraMove.instance.Go(ValueSheet.NodeList_UDP_ID[dataTest], ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
@@ -74,29 +80,40 @@ public class DealWithUDPMessage : MonoBehaviour {
             else if (ValueSheet.NodeList2_UDP_ID.ContainsKey(dataTest))
             {
                 toDefaultScene2();
-
+                CataCtr.instance.HideAll();
                 OverriderCameraMove.instance.Go(ValueSheet.NodeList2_UDP_ID[dataTest], ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 200);
             }
             else if (ValueSheet.NodeList3_UDP_ID.ContainsKey(dataTest)) {
                 toDefaultScene3();
-
+                CataCtr.instance.HideAll();
                 OverriderCameraMove.instance.Go(ValueSheet.NodeList3_UDP_ID[dataTest], ValueSheet.ID_Node3_keyValuePairs, DefaultNodesCtr3.instance, -200);
             }
 
             else if (dataTest == "1000") {
+                //CataCtr.instance.HideAll();
+                //CataCtr.instance.CataNodes[0].ShowAll();
                 toDefaultScene();
                 OverriderCameraMove.instance.moveToDefaultNodes();
             }
             else if (dataTest == "2000") {
+               // CataCtr.instance.HideAll();
+               // CataCtr.instance.CataNodes[1].ShowAll();
                 toDefaultScene2();
                 OverriderCameraMove.instance.moveToDefaultNodes2();
             }
             else if (dataTest == "3000")
             {
+              //  CataCtr.instance.HideAll();
+             //   CataCtr.instance.CataNodes[2].ShowAll();
                 toDefaultScene3();
                 OverriderCameraMove.instance.moveToDefaultNodes3();
+            } else if (dataTest=="5000") {
+                toMainVideo();
             }
+
         }
+
+        perviousData = dataTest;
 
     }
 
@@ -130,9 +147,13 @@ public class DealWithUDPMessage : MonoBehaviour {
 
     public static void toDefaultScene() {
         if (!isInDefaultScreen) {
+            CataCtr.instance.CataNodes[0].ShowAll();
+            CataCtr.instance.CataNodes[1].HideAll();
+            CataCtr.instance.CataNodes[2].HideAll();
+
             Debug.Log("去项目集锦");
             ToDefaultScene?.Invoke();
-            // isInDefaultScreen = true;
+          //  isInDefaultScreen = true;
             isInDefaultScreen3 = isInDefaultScreen2 = false;
         }
     }
@@ -142,8 +163,11 @@ public class DealWithUDPMessage : MonoBehaviour {
         if (!isInDefaultScreen2)
         {
             Debug.Log("去项目集锦");
+            CataCtr.instance.CataNodes[1].ShowAll();
+            CataCtr.instance.CataNodes[0].HideAll();
+            CataCtr.instance.CataNodes[2].HideAll();
             ToDefaultScene2?.Invoke();
-            // isInDefaultScreen = true;
+           //  isInDefaultScreen2 = true;
             isInDefaultScreen3 = isInDefaultScreen= false;
         }
     }
@@ -152,11 +176,22 @@ public class DealWithUDPMessage : MonoBehaviour {
     {
         if (!isInDefaultScreen3)
         {
+            CataCtr.instance.CataNodes[2].ShowAll();
+            CataCtr.instance.CataNodes[0].HideAll();
+            CataCtr.instance.CataNodes[1].HideAll();
             Debug.Log("去项目集锦");
             ToDefaultScene3?.Invoke();
-            // isInDefaultScreen = true;
+        //     isInDefaultScreen3 = true;
             isInDefaultScreen2 = isInDefaultScreen= false;
         }
+    }
+
+
+    public static void toMainVideo() {
+        ToMainVideo?.Invoke();
+        isInDefaultScreen2 = isInDefaultScreen = isInDefaultScreen3 = false;
+
+        playMainVideo(ValueSheet.MainVideoUrl);
     }
 
 

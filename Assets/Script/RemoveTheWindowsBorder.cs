@@ -24,8 +24,11 @@ public class RemoveTheWindowsBorder : MonoBehaviour
     int _Txtheight = 1066;
     void Start()
     {
+#if !UNITY_EDITOR  
+        Screen.SetResolution(_Txtwith, _Txtheight, false);
+        Cursor.visible = false;
         StartCoroutine("Setposition");
-        StartCoroutine("ReSetposition");
+# endif
     }
 
     private void Update()

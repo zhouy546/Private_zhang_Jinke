@@ -175,6 +175,10 @@ public class NodeCtr : ICtr {
 
         MainImage.sprite = mainUIsprite[int.Parse(ID)];
 
+        //Debug.Log("id"+int.Parse(ID));
+
+        //Debug.Log(DescriptionkeyValuePairs[int.Parse(ID)]);
+
         DescriptionImage.sprite = DescriptionkeyValuePairs[int.Parse(ID)][0];
     }
 

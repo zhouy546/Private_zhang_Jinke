@@ -21,7 +21,7 @@ public class RemoveTheWindowsBorder : MonoBehaviour
     int _posX = 0;
     int _posY = 0;
     int _Txtwith = 3360;
-    int _Txtheight = 1066;
+    int _Txtheight = 1080;
     void Start()
     {
 #if !UNITY_EDITOR  

@@ -202,6 +202,35 @@ public class OverriderCameraMove : MonoBehaviour {
     }
 
 
+
+
+    public void GoDirectly(int ID, Dictionary<int, GameObject> ID_Node_keyValuePairs, ICtr ctr, float offset = 0)
+    {
+
+        BottomBarCtr.instance.updateBar(ID, (float)ID_Node_keyValuePairs.Count);
+
+        cameraMove();
+
+        LeanTween.cancel(this.gameObject);
+
+
+        goToTheNode(getRotue(ID, ID_Node_keyValuePairs, offset), 1f, ID, ctr);
+    }
+
+    private void goToTheNode(List<RotueNode> rotueNodes,float timeEachSetp, int id, ICtr ctr) {
+       
+
+        TargetID = id;
+        int i = rotueNodes.Count-1;
+
+        ctr.showMainPicDe();
+        MoveTo(rotueNodes[i].pos, timeEachSetp, () => updatePerviousID(id));
+        RotateTo(rotueNodes[i].rotationAngle, timeEachSetp);
+        ctr.hideMainPicDe();
+        ctr.ShowDescriptionDe(id);
+    }
+
+
     IEnumerator MoveToTarget(List<RotueNode> rotueNodes, float timeEachSetp, int id,ICtr ctr)
     {
        // Debug.Log(timeEachSetp);

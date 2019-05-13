@@ -74,19 +74,19 @@ public class DealWithUDPMessage : MonoBehaviour {
                 CataCtr.instance.HideAll();
                 Debug.Log(ValueSheet.ID_Node_keyValuePairs.Count);
 
-                OverriderCameraMove.instance.Go(ValueSheet.NodeList_UDP_ID[dataTest], ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
+                OverriderCameraMove.instance.GoDirectly(ValueSheet.NodeList_UDP_ID[dataTest], ValueSheet.ID_Node_keyValuePairs, DefaultNodesCtr.instance);
 
             }
             else if (ValueSheet.NodeList2_UDP_ID.ContainsKey(dataTest))
             {
                 toDefaultScene2();
                 CataCtr.instance.HideAll();
-                OverriderCameraMove.instance.Go(ValueSheet.NodeList2_UDP_ID[dataTest], ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 200);
+                OverriderCameraMove.instance.GoDirectly(ValueSheet.NodeList2_UDP_ID[dataTest], ValueSheet.ID_Node2_keyValuePairs, DefaultNodesCtr2.instance, 200);
             }
             else if (ValueSheet.NodeList3_UDP_ID.ContainsKey(dataTest)) {
                 toDefaultScene3();
                 CataCtr.instance.HideAll();
-                OverriderCameraMove.instance.Go(ValueSheet.NodeList3_UDP_ID[dataTest], ValueSheet.ID_Node3_keyValuePairs, DefaultNodesCtr3.instance, -200);
+                OverriderCameraMove.instance.GoDirectly(ValueSheet.NodeList3_UDP_ID[dataTest], ValueSheet.ID_Node3_keyValuePairs, DefaultNodesCtr3.instance, -200);
             }
 
             else if (dataTest == "1000") {
